@@ -1,7 +1,7 @@
 module.exports = {
   title: `D3vlog`,
   description: `Blog posted about contents what I learned`,
-  author: `SuIn Roh - bigpie1367`,
+  author: `SuIn Roh`,
   introduction: `This blog is to record what I have learned`,
   siteUrl: `https://bigpie1367.netlify.com`, // Your blog site url
   social: {
