@@ -1,6 +1,6 @@
 ---
 title: JavaScript Study - 2. JavaScript 기초
-date: 2021-02-22
+date: 2021-02-23
 category: JavaScript
 thumbnail: { thumbnailSrc }
 draft: false
@@ -14,7 +14,7 @@ draft: false
 
 # Hello World!
 ``` javascript
-#main.js
+//main.js
 console.log('Hello World!');	//console 창에 'Hello World!'를 출력
 ```
 `console.log()`는 Console API에서 제공하는 가장 기초적인 Method이며, 일반적으로 변수이 값을 기록할 때 사용함.
@@ -24,27 +24,31 @@ console.log('Hello World!');	//console 창에 'Hello World!'를 출력
 # async VS defer
 HTML에서 JavaScript를 포함하기 위해서는 다양한 방법이 존재한다.
 
-1. `<head>` 내에 `<script>`를 포함
+## 1. `<head>` 내에 `<script>`를 포함
 ``` html
 <!DOCTYPE html>
 <html lang="en">
     <head>
 		<meta charset="UTF-8" />
-		<title>Document</title>
+    	<title>Document</title>
 		<script src="main.js"></script>
 	</head>
 	<body></body>
 </html>
 ```
-사용자가 HTML 파일을 다운받았을 때, HTML을 한 줄씩 파싱(Parsing)하게 된다. 파싱 과정에서 `<script>`태그를 발견할 시 `main.js` 파일을 서버로부터 다운받고 실행한 뒤 다시 파싱을 진행한다.
-  ### Demerits
-  **js 파일의 사이즈 혹은 인터넷 속도에 영향을 받는다**    
-  사용자가 HTML 파일을 다운로드 받은 뒤 JavaScript 추가적으로 다운받게 된다. 따라서 JavaScript 파일의 사이즈가 크거나 인터넷 속도가 느릴 시, Page를 완성하는 데 오랜 시간이 소요된다.
+
+### How it works
+ 사용자가 HTML 파일을 다운받았을 때 이를 실행하기 위해 HTML 한 줄씩 읽어들이며 실행, 즉 파싱(Parsing)을 진행한다. 파싱 과정에서 `<script>`태그를 발견할 시 파싱을 중단한 채 `main.js` 파일을 서버로부터 다운받고 실행한 뒤 다시 파싱을 진행한다.    
+
+### Demerits
+#### **js 파일의 사이즈 혹은 인터넷 속도에 영향을 받는다**    
+사용자가 HTML 파일을 다운로드 받은 뒤 js 파일을 추가적으로 다운받게 된다. 따라서 js 파일의 사이즈가 크거나 인터넷 속도가 느릴 시, Page를 완성하는 데 오랜 시간이 소요된다.
   
-2. `<body>` 의 끝에 `<script>`를 포함
+    
+## 2. `<body>` 의 끝에 `<script>`를 포함
 ``` html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en">    
     <head>
 		<meta charset="UTF-8" />
 		<title>Document</title>
@@ -55,13 +59,16 @@ HTML에서 JavaScript를 포함하기 위해서는 다양한 방법이 존재한
 	</body>
 </html>
 ```
-`<body>`의 끝에 `<script>`를 정의함으로써 다른 모든 HTML을 파싱, 즉 Page가 모두 준비 된 뒤 서버로부터 다운로드를 진행한다.
 
-   ### Demerits
-   **해당 Web의 JavaScript 의존도에 따라 속도가 달라진다.**    
-   이전 방법에 비해 사용자가 기본적인 HTML Contents를 빨리 볼 수 있지만, JavaScript 파일에 의존하는 내용들의 경우에는 서버로부터 다운로드 받고 실행하는 시간을 기다려야만 한다.
+### How it works
+`<body>`의 끝에 `<script>`를 정의함으로써 해당 HTML 파일을 모두 파싱, 즉 Page가 모두 준비 된 뒤 서버로부터 다운로드를 진행한다.
+    
+### Demerits    
+#### **해당 Web의 JavaScript 의존도에 영향을 받는다.** 
+이전 방법에 비해 사용자가 기본적인 HTML Contents를 빨리 볼 수 있지만, js 파일에 의존하는 내용들의 경우에는 서버로부터 다운로드 받고 실행하는 시간을 기다려야만 한다.
 
-3. head + async
+    
+## 3. head + async
 ``` html
 <!DOCTYPE html>
 <html lang="en">
@@ -75,4 +82,39 @@ HTML에서 JavaScript를 포함하기 위해서는 다양한 방법이 존재한
 	</body>
 </html>
 ```
-`<script>` Tag에 `async` 속성을 정의할 경우, HTML 파싱을 진헹하는 도중 `<script>`를 만날 시 파싱을 중단하지 않고 병렬로 서버로부터 다운로드를 진행한다. 이 때, 서버로부터 다운로드가 완료될 시 파싱을 중단하고 JavaScript 파일을 실행한다.
+
+### How it works
+`<script>` Tag에 `async` 속성을 추가할 경우, HTML 파싱을 진헹하는 도중 `<script>`를 만날 시 파싱을 중단하지 않고 병렬로 서버로부터 다운로드를 진행한다. 이 때, js 파일이 다운로드가 완료될 시 파싱을 중단하고 js 파일을 실행한다. 이후 다시 파싱을 진행한다.
+
+### Demerits
+#### js 파일을 실행하는 데 위험성을 내포
+js 파일이 HTML이 모두 파싱되기 전에 실행된다. 만약 js 파일을 통해 특정 HTML에 접근하고자 할 때, 해당 HTML이 아직 준비되지 않았을 때가 있을 수 있다. 또한 js 파일의 실행을 위해 HTML 파싱을 중단하므로 사용자가 Page에 접근하는 데 시간이 소요된다.  
+
+## head + defer
+``` html
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<script defer src="main.js"></script>
+	</head>
+	<body>
+		<div></div>
+	</body>
+</html>
+```
+
+### How it works
+이전 `async`와 마찬가지로, HTML 파일의 파싱을 진행하는 도중 `defer` Tag를 만날 시 파싱을 중단하지 않고 병렬로 js 파일을 서버로부터 다운로드받는다. 이 때 `async`와의 차이점은 다운로드가 완료될 시 즉각적으로 파싱을 중단하고 실행하는 `async`와는 달리 `defer`은 HTML 파일의 파싱을 모두 진행한 뒤 js 파일을 실행한다.
+
+# 'use strict'
+``` javascript
+//main.js
+'use strict';
+
+consloe.log('Hello World!');
+```
+Vanlia JS는 다른 일반적인 언어들에 비해 유연한(flexble)한 특징을 지닌다. 선언되지 않은 변수에 값을 할당, 기존에 존재하는 Prototype을 변경할 수 있는 것이 그 예이다. 이러한 것들의 사용을 방지하고자 추가하는 것이 `'use strict';`이다.
+
+## Merits
