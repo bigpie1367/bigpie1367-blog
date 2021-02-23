@@ -1,5 +1,5 @@
 module.exports = {
-  title: `D3vlog`,
+  title: `Dev.Login`,
   description: `Blog posted about contents what I learned`,
   author: `SuIn Roh`,
   introduction: `This blog is to record what I have learned`,
