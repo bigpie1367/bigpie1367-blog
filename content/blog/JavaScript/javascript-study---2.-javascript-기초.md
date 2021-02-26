@@ -110,7 +110,7 @@ js 파일이 HTML이 모두 파싱되기 전에 실행된다. 만약 js 파일�
 ### How it works
 이전 `async`와 마찬가지로, HTML 파일의 파싱을 진행하는 도중 `defer` Tag를 만날 시 파싱을 중단하지 않고 병렬로 js 파일을 서버로부터 다운로드받는다. 이 때 `async`와의 차이점은 다운로드가 완료될 시 즉각적으로 파싱을 중단하고 실행하는 `async`와는 달리 `defer`은 HTML 파일의 파싱을 모두 진행한 뒤 js 파일을 실행한다.
 
-# Option. 'use strict'
+# Option. `'use strict'`
 ``` javascript
 //main.js
 'use strict';
