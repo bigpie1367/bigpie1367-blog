@@ -1,13 +1,13 @@
-
+---
 title: JavaScript Study - 3. JavaScript Data
-date: 2021-02-23
+date: 2021-02-26
 category: JavaScript
 thumbnail: { thumbnailSrc }
 draft: false
-
+---
 
 # Warning
-해당 글은 **JavaScript**를 개인적으로 공부하며 요약해둔 내용으로, 
+해당 글은 **JavaScript**를 개인적으로 공부하며 요약해둔 내용으로, gi
 작성자의 이해를 바탕으로 작성되었기에 **틀린 내용**이 있을 수 있습니다.    
 
 참고 문헌 : [Youtube 드림코딩](https://www.youtube.com/watch?v=OCCpGh4ujb8&list=PLv2d7VI9OotTVOL4QmPfvJWPJvkmv6h-2&index=3)
@@ -61,10 +61,11 @@ console.log(globalName);
 ```
 Blcok Scope와는 달리 Global Scope 영역에서 정의한 변수는 Block 내부와 외부에서 모두 접근할 수 있음을 확인할 수 있다.
 
-#### Demerits
+#### **Demerits**
 모든 변수를 Global 변수로 선언하는 것이 옳다고 생각할 수 있겠으나, Global Scope에서 선언된 변수는 프로그램이 실행하는 순간부터 종료하는 순간까지 항상 Memory 영역에 올라가있기에 최소한으로 사용해야만 한다. 반면 Block Scope에서 선언된 변수는 해당 Block이 종료됨과 동시에 Memory가 해제된다.
 
-## About `var`
+
+## var
 위에서는 변수를 선언하기 위한 키워드로 `let`을 제시했는데, 이는 ES6부터 추가된 키워드이다. ES6 이전에는 `var` 키워드를 사용하였는데, `var` 키워드가 지닌 여러 단점들로 인해 ES6 이후부터는 사용되지 않는다.
 
 ### Demerits.1
@@ -79,7 +80,7 @@ console.log(age);
 var age;
 ```
 
-#### var hoisting
+#### **var hoisting**
 이러한 것이 가능한 기술적 이유로는 'var hoisting' 때문이다. var hoisting이란 변수를 어디에 선언하든 파일, 혹은 함수을 실행할 때 모든 변수의 선언들을 최상단으로 끌어올리(Hosting)는 것을 뜻한다. 이를 통해 코드 어디에 변수를 선언하든, 실행하면서 해당 선언을 최상단으로 끌어올려 선언하기에 비록 코드상으론 선언하기 전에 사용이 되었을지라도 정상적으로 동작하는 것이다. 
 
 ### Demertis.2
@@ -116,6 +117,7 @@ console.log(age);	//age 정상 출력
 ### number
 C나 Java같은 경우엔 숫자를 선언하기 위한 다양한 Data Type이 존재한다. C에서는 short, int, long과 같이 정수(integer)를 선언하기 위한 Data Type과 float, double과 같은 실수(float)를 선언하기 위한 Data Type이 따로 존재한다. 이와는 달리 JavaScript에서는 숫자를 선어하기 위한 Keyword로 `number` 하나만 사용한다.
 
+---
 #### Special Number : `Infinity`
 `number`에서도 특별한 값이 몇 가지 존재하는데 `infinity`가 그 예이다. 이러한 특별한 세 값은 주로 입력받은 값이 타당한(valid) 값인지 아닌지 판단할 때 사용된다.
 ``` javascript
@@ -126,13 +128,14 @@ console.log(infinity);
 console.log(negativeInfinity);
 console.log(nAn);
 ```
-
+---
 #### Special Number : `bigInt`
 JavaScript에서의 `number`은 -9.0071993e+15 ~ +9.0071993e+15(-2^53 ~ 2^53)의 값을 표현 가능하다. 그러나 이 범위를 넘어갈 경우를 대비한 `bigInt`라는 새로운 Type이 생겼다. 사용하기 위해서는 숫자 끝에 `n`을 추가하면 된다.
 ``` javascript
 const bigInt = 1234567890123456789012345678901234567890n;
 console.log(`value: ${bigInt}`, type: ${typeof bigInt}`);
 ```
+---
 
 ### string
 다른 언어에서는 1개의 문자(character)를 위한 Data Type이 별도로 존재하지만, JavaScript에서는 `string`으로 문자와 문자열을 모두 표현한다. 또한 일반 `string`과 다른 변수를 `+` 연산자를 이용하여 문자열을 합칠 수 있다.
@@ -147,7 +150,7 @@ console.log('value: ' + helloBob + ' type: '
  + typeof helloBob);	//same with above
 ```
 
-#### template literals
+#### **template literals**
 문자열 내에 다른 변수의 값을 함께 출력하고자 할 때 사용한다. 변수의 값을 출력하고자 할 때는 `${variableName}`로 사용한다.
 
 ### boolean
