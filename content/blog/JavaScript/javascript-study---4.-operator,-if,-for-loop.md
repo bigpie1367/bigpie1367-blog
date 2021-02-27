@@ -121,7 +121,7 @@ function check() {
 
 또한 `&&` 연산은 Object의 `null` 체크를 위해서도 사용되는데, 이는 `null`이 `false`임을 응용한 것이다.
 
-```
+``` javascript
 const myInfo = { name: 'rohsuin', age: '21' };
 
 null && myInfo.name;	//null
@@ -139,7 +139,7 @@ console.log(!value1);	//false
 ```
 
 ## Equality
-두 개의 피연산자가 같은지를 비교할 때 사용하는 연산자로, `==` 와 `===`가 존재한다. `==`는 loose equality라고 부르는데, 두 개의 피연산자의 Data Type이 다를지라도 내용물이 동일하면 `true`를 return한다. 이와는 반대로 `===` 연산자는 strict equality로, 피연산자의 Data Type까지 고려하여 결과를 return한다.
+두 개의 피연산자가 같은지를 비교할 때 사용하는 연산자로, `==` 와 `===`가 존재한다. `==` 두 개의 피연산자의 Data Type이 다를지라도 내용물이 동일하면 `true`를 return한다. 이와는 반대로 `===` 연산자는 피연산자의 Data Type까지 고려하여 결과를 return한다.
 
 ``` javascript
 const stringFive = '5';
@@ -189,7 +189,7 @@ console.log(name === 'rohsuin' ? 'yes' : 'no');	// yes
 ```
 
 ## Switch statement
-연속적으로 `if`문을 사용해야 할 경우 `switch`문을 고려해볼 수 있으며, 이는 가독성의 향상으로 이어진다. `switch`문을 사용할 때 `break`를 각각의 경우마다 추가해야하는데, `break`문이 없을 경우 `switch`문을 종료하는 것이 아닌 계속해서 실행하게 된다. 이를 응용하면 동일한 결과값이 출력되는 경우, `break`문을 작성하지 않고 연달아 작성함으로써 코드를 간략화할 수 있다.
+연속적으로 `if`문을 사용해야 할 경우 `switch`문을 고려해볼 수 있으며, 이는 가독성의 향상으로 이어진다. `switch`문을 사용할 때 `break`를 각각의 경우마다 추가해야하는데, `break`문이 없을 경우 `switch`문을 종료하는 것이 아닌 계속해서 실행하게 된다. 이를 응용하면 동일한 결과값을 출력하고자 하는 경우, `break`문을 작성하지 않음으로써 코드를 간략화할 수 있다.
 
 ``` javascript
 const browser = 'IE';
@@ -267,7 +267,7 @@ console.log(`i: ${i}}`);
 for (let j = 3; j > 0; j--) {
 	console.log(`inline variable for: ${j}`);
 }
-console.log(`j: ${j});
+console.log(`j: ${j}`);
 // inline variable for: 3
 // inline variable for: 2
 // inline variable for: 1
