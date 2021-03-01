@@ -18,7 +18,7 @@ draft: false
 참조 : [JavaScript Study - 3. JavaScript Data](https://bigpie1367.netlify.app/JavaScript/javascript-study---3.-javascript-data/)
 
 ## Function Declaration
-`functuion name(param1, param2) { body ... return; }`
+사용예제 : `functuion name(param1, param2) { body ... return; }`    
 일반적으로 함수의 이름은 명사가 아닌 동사형태로 지정한다. ex) postMD
 
 ``` javascript
@@ -50,7 +50,7 @@ console.log(name);
 
 즉, Object는 reference로 전달되기에 내부요소가 정상적으로 변경된 걸 확인할 수 있다.
 
-## Default Parameters
+### Default Parameters
 `Default Parameter`는 함수가 요구하는 파라미터를 사용자가 입력하지 않을 시를 위한 것으로, 파라미터의 default 값을 설정하는 것이다. 즉, 사용자가 해당 파라미터를 전달하지 않을 시 `Default Parameter`로 설정해 둔 값이 자동적으로 할당되는 것이다.
 
 ``` javascript
@@ -63,7 +63,7 @@ function showMesage(message, from = 'unknown') {
 showMessage('Hi!');	// Hi! by unknown
 ```
 
-## Rest Parameter
+### Rest Parameter
 `Rest Parameter`는 배열형태로 파라미터를 전달하기 위함이다. 사용하기 위해서는 `...`을 함수의 파라미터 앞에 추가하면 된다.
 
 ``` javascript
@@ -79,7 +79,7 @@ printAll('dream', 'coding', 'suin');
 ```
 
 ## Local Scope
-Local Scope의 기본적인 원칙은 아래와 같다.
+Local Scope의 기본적인 원칙은 아래와 같다.     
 **밖에서는 안을 볼 수 없지만, 안에서는 밖을 볼 수 있다**
 
 ``` javascript
@@ -231,10 +231,10 @@ const add = function(a, b) {
 const add = (a, b) => a + b;
 ```
 
-### IIFE - Immediately Invoked Function Expression
-``` javscript
-// IIFE는 선언함과 동시에 함수를 실행하기 위함이다.
+## IIFE - Immediately Invoked Function Expression
+`IIFE`는 함수를 선언함과 동시에 실행하기 위함으로, 사용예제는 아래와 같다.    
 
+``` javascript
 function hello() {
 	console.log('IIFE');
 }
