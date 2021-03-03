@@ -75,8 +75,9 @@ const user1 = new User('Steve', 'Job', -1);
 console.log(user1.age);
 ```
     
-getter를 선언하게 되면 변수들을 읽어들일 때 자동적으로 getter method를 실행한다. setter의 경우도 마찬가지로, 변수에 값을 할당할 때 자동적으로 setter method를 실행한다. 즉, constructor method 내의 `this.age = age;` 코드를 실행할 때, 값을 할당하기 위해 `set age(value)` method를 호출하게 된다.         
- 이로인해 `set age(value)` method 내의 `this.age = value;`를 통해 값을 할당하고자 하면, 다시 `set age(value)` method를 호출하게 되고 무한루프에 빠지게된다. 이를 방지하기 위함이 아래와 같다.
+getter를 선언하게 되면 변수들을 읽어들일 때 자동적으로 getter method를 실행한다. setter의 경우도 마찬가지로, 변수에 값을 할당할 때 자동적으로 setter method를 실행한다. 즉, constructor method 내의 `this.age = age;` 코드를 실행할 때, 값을 할당하기 위해 `set age(value)` method를 호출하게 된다. 
+        
+이로인해 `set age(value)` method 내의 `this.age = value;`를 통해 값을 할당하고자 하면, 다시 `set age(value)` method를 호출하게 되고 무한루프에 빠지게된다. 이를 방지하기 위함이 아래와 같다.
 
 ``` javascript
 // for avoid loop
@@ -174,9 +175,9 @@ console.log(triangle.getArea());	// 400 ?
 ```
 
 ## Polymorphism
-상속을 통한 메소드를 재정의 할 필요가 있을 시 수정할 수 있는데, 이를 오버라이딩(Overriding)이라 한다. 이 때, 부모 Class의 메소드를 다시 사용하고자 할 경우 `super` 키워드를 통해 사용가능하다.
+상속을 통한 메소드를 재정의 할 필요가 있을 시 수정할 수 있는데, 이를 오버라이딩(Overriding)이라 한다. 이 때, 부모 Class의 메소드를 다시 사용하고자 할 경우 `super` 키워드를 통해 사용가능하다. JavaScript의 이러한 특징을 다형성(Polymorphism)을 지닌다고 표현한다.
 
-``` 
+``` javascript
 class Shape {
 	constructor(width, height, color) {
 		this.width = width;
