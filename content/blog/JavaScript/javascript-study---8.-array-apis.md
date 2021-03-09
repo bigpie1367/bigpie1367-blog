@@ -33,7 +33,7 @@ console.log(fruits[fruits.length - 1]);	// banana
 ```
 
 ## Looping over an array
-``` javascrirpt
+``` javascript
 const frutis = ['apple', 'banana'];
 
 // a. for
