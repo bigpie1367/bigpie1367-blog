@@ -96,7 +96,7 @@ const students = [
 const result = students.find((student) => return student.score === 90);
 
 console.log(result);	// Student {name: "C", age: 30, 
-									enrolled: true, scpre: 90}
+						//			enrolled: true, scpre: 90}
 ```
 
 ## filter
@@ -144,7 +144,7 @@ console.log(result);	// false
 const result = students.reduce((prev, curr) => {
 	console.log(prev);	// 0 (initial param)
 	console.log(curr);	// Student {name: "A", age: 29, 
-									enrolled: true, score: 45}
+						//			enrolled: true, score: 45}
 
 	return prev + curr.score;
 }, 0);
@@ -154,7 +154,7 @@ console.log(result);	// 369
 const result2 = students.reduceRight((prev, curr) => {
 	console.log(prev);	// 0
 	console.log(curr);  // Student {name: "E", age: 18, 
-									enrolled: true, score: 88}
+						//			enrolled: true, score: 88}
 	
 	return prev + curr.score;
 }, 0);
