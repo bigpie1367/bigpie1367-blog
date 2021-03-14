@@ -1,5 +1,5 @@
 ---
-title: JavaScript Study - 4. Operator, if, for loop
+title: JavaScript Study - 04. Operator, if, for
 date: 2021-02-27
 category: JavaScript
 thumbnail: { thumbnailSrc }

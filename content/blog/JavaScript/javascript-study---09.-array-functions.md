@@ -1,5 +1,5 @@
 ---
-title: JavaScript Study - 9. Array functions
+title: JavaScript Study - 09. Array functions
 date: 2021-03-10
 category: JavaScript
 thumbnail: { thumbnailSrc }

@@ -1,5 +1,5 @@
 ---
-title: JavaScrirpt Study - 10. JSON
+title: JavaScript Study - 10. JSON
 date: 2021-03-11
 category: JavaScript
 thumbnail: { thumbnailSrc }

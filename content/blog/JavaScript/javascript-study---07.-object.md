@@ -1,5 +1,5 @@
 ---
-title: JavaScript Study - 7. Object
+title: JavaScript Study - 07. Object
 date: 2021-03-07
 category: JavaScript
 thumbnail: { thumbnailSrc }

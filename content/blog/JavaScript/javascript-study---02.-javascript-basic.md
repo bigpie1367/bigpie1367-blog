@@ -1,5 +1,5 @@
 ---
-title: JavaScript Study - 2. JavaScript 기초
+title: JavaScript Study - 02. JavaScript Basic
 date: 2021-02-23
 category: JavaScript
 thumbnail: { thumbnailSrc }

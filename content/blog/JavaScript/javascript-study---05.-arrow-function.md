@@ -1,5 +1,5 @@
 ---
-title: JavaScript Study - 5. Arrow Function
+title: JavaScript Study - 05. Arrow Function
 date: 2021-03-01
 category: JavaScript
 thumbnail: { thumbnailSrc }

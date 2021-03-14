@@ -1,5 +1,5 @@
 ---
-title: JavaScript Study - 8. Array APIs
+title: JavaScript Study - 08. Array APIs
 date: 2021-03-09
 category: JavaScript
 thumbnail: { thumbnailSrc }
