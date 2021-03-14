@@ -1,5 +1,5 @@
 ---
-title: JavaScript Study - 01. JavaScript?
+title: JavaScript Study - 01. JavaScript
 date: 2021-02-22
 category: JavaScript
 thumbnail: { thumbnailSrc }
