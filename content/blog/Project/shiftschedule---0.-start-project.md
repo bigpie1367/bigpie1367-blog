@@ -29,7 +29,7 @@ draft: false
 책임주도설계와 다른 개발론들과의 가장 큰 차이점은 데이터가 아닌 행동을 먼저 결정하라는 것이다. 즉, 각 객체의 데이터들을 먼저 정의하는 것이 아닌 객체가 수행해야 할 책임을 먼저 결정하는 것이다.
 
 ## 대략적인 도메인 설계
-![domain](/workspace/bigpie1367-blog/content/assets/Project/ShiftSchedule/domain.png)
+![domain](content/assets/Project/ShiftSchedule/domain.png)
 
 
 
